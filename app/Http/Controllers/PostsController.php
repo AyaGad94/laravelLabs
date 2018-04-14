@@ -46,7 +46,8 @@ public function edit($id)
             'post'=>$post,
             'users'=>$users
             ]);
-    }
+    
+        }
 
 //////////////////////////
 public function create()
@@ -59,26 +60,15 @@ public function create()
     }
     //////////////////////////////////////////////////////
 
-    public function update($id)
+    public function update(Request $request,Post $post)
     {
-        try{
-            $user = User::findOrFail($request->user_id);
-        }
-        catch(ModelNotFoundException $e){
-            render("notfound");
-
-        }
-         
-
-
-
-        Post::update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'user_id' => $request->user_id
-        ]);
+       
+       
+        $new_post = $request->only(['title', 'description', 'user_id']);
+        $post->slug= null;
+        $post->update($new_post);
         
-       return redirect(route('posts.index')); 
+       return redirect('/posts'); 
         
     }
 

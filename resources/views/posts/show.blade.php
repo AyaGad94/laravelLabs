@@ -19,6 +19,8 @@
  <br>
  Description:{{$post->description}}
  </fieldset>
+<br>
+Created At: {{$post->created_at->toDayDateTimeString()}}
 
 </div>
 
@@ -29,7 +31,6 @@
  <br>
  Email:{{$post->user->email}}
  <br>
- Created At:{{$post->user->created_at}}
 
 
 

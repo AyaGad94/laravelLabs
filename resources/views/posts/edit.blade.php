@@ -12,7 +12,7 @@
         </ul>
     </div>
 @endif
-<form method="post" action="/posts">
+<form method="post" action="/update/{{$post->id}}">
 {{csrf_field()}}
 Title :- <input type="text" name="title" value={{$post->title}}>
 <br><br>
@@ -23,7 +23,8 @@ Description :-
 Post Creator
 <select class="form-control" name="user_id">
 @foreach ($users as $user)
-    <option value="{{$user->id}}">{{$user->name}}</option>
+  
+ <option value="{{$user->id}}" {{($user->id == $post->user->id) ? "selected='selected'" : ''}}>{{$user->name}}</option>
 @endforeach
 
 </select>
