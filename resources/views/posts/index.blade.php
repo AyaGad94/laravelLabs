@@ -17,7 +17,7 @@
 
 
     <td>{{$post->title}}</td>
-    <td>{{$post->PostedBy}}</td>
+    <td>{{$post->user->name}}</td>
     <td>{{$post->description}}</td>
     <td>{{$post->created_at->toDateString()}}</td>
 
@@ -31,6 +31,6 @@
 
 </table>
 
-<script type="text/javascript" src="lab.js" ></script>    
+ 
 </body>
 @endsection
