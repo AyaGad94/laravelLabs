@@ -30,9 +30,14 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => App\User::class, 
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+    'github' => [
+        'client_id' => env('GIT_HUB_ID'),         // Your GitHub Client ID
+        'client_secret' => env('GIT_HUB_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'http://laravel.local/login/github/callback',
     ],
 
 ];

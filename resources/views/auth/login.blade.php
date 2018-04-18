@@ -51,9 +51,24 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+                              
+                            @guest
+                              
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Looogin
                                 </button>
+                                @else
+                                <button type="submit" class="btn btn-primary">
+                                    Logout
+                                </button>
+                                @endguest
+
+                              
+                              
+                              <a href="/login/github" type="button"  class="btn btn-primary">
+                                    GitHUB
+                                </a>
+                                
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
